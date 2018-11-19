@@ -6,127 +6,99 @@
 
     <title>paper-number-input demo</title>
 
-    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../../paper-input/paper-input.html">
-    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
-    <link rel="import" href="../../paper-checkbox/paper-checkbox.html">
-    <link rel="import" href="../paper-number-input.html">
+    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+    <script type="module" src="../../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../../../@polymer/paper-input/paper-input.js"></script>
+    <script type="module" src="../../../@polymer/iron-flex-layout/iron-flex-layout.js"></script>
+    <script type="module" src="../../../@polymer/paper-checkbox/paper-checkbox.js"></script>
+    <script type="module" src="../paper-number-input.js"></script>
+
+      <!--
+      For icons to appear, you can:
+       - just import the iron-icons/iron-icons.js Polymer element,
+       - create your own icon set and specify `stepDownIcon` and `stepUpIcon` properties according.
+       - import paper-number-input/paper-number-input-icons and define
+          `stepDownIcon` as 'integer-input:step-down' and `stepUpIcon` as 'integer-input:step-up'
+      -->
+      <script type="module" src="../../../@polymer/iron-icons/iron-icons.js"></script>
   </head>
 
   <body>
+    <script type="module">
+      const $_documentContainer = document.createElement('template');
 
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-      </style>
-    </custom-style>
+      $_documentContainer.innerHTML = `<custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+        </style>
+      </custom-style>`;
 
-    <div class="vertical-section-container centered">
+      document.body.appendChild($_documentContainer.content);
+    </script>
 
-      <demo-snippet>
-        <template>
+    <script type="module">
+      const $_documentContainer = document.createElement('template');
 
-          <dom-bind id="scope">
-            <template>
+      $_documentContainer.innerHTML = `<div class="vertical-section-container centered">
+        <demo-snippet>
+          <template>
 
-            <!--
-              For icons to appear, you can:
-               - just import the iron-icons/iron-icons.html Polymer element,
-               - create your own icon set and specify `stepDownIcon` and `stepUpIcon` properties according.
-               - import paper-number-input/paper-number-input-icons and define
-                  `stepDownIcon` as 'integer-input:step-down' and `stepUpIcon` as 'integer-input:step-up'
-            -->
-              <link rel="import" href="../../iron-icons/iron-icons.html">
-              <link rel="import" href="../../polymer/lib/elements/custom-style.html">
+            <dom-bind id="scope">
+              <template>
 
-              <custom-style>
-                <style>
-                  paper-number-input {
-                    max-width: 150px;
-                    margin: auto;
-                  }
-                </style>
-              </custom-style>
+                <custom-style>
+                  <style>
+                    paper-number-input {
+                      max-width: 150px;
+                      margin: auto;
+                    }
+                  </style>
+                </custom-style>
 
-              <paper-input
-                label="Label"
-                value="{{label}}"
-              ></paper-input>
+                <paper-input label="Label" value="{{label}}"></paper-input>
 
-              <paper-input
-                type="number"
-                label="min"
-                value="{{min}}"
-              ></paper-input>
+                <paper-input type="number" label="min" value="{{min}}"></paper-input>
 
-              <paper-input
-                type="number"
-                label="max"
-                value="{{max}}"
-              ></paper-input>
+                <paper-input type="number" label="max" value="{{max}}"></paper-input>
 
-              <paper-input
-                type="number"
-                label="Value"
-                value="{{value}}"
-              ></paper-input>
+                <paper-input type="number" label="Value" value="{{value}}"></paper-input>
 
-              <paper-input
-                type="number"
-                label="Step"
-                value="{{step}}"
-              ></paper-input>
+                <paper-input type="number" label="Step" value="{{step}}"></paper-input>
 
-              <paper-input
-                type="number"
-                label="Fallback value"
-                value="{{fallbackValue}}"
-              ></paper-input>
+                <paper-input type="number" label="Fallback value" value="{{fallbackValue}}"></paper-input>
 
-              <paper-checkbox
-                checked="{{disabled}}"
-              >Disabled</paper-checkbox>
+                <paper-checkbox checked="{{disabled}}">Disabled</paper-checkbox>
 
-              <paper-checkbox
-                checked="{{alwaysFloatLabel}}"
-              >Always label float</paper-checkbox>
+                <paper-checkbox checked="{{alwaysFloatLabel}}">Always label float</paper-checkbox>
 
-              <paper-number-input
-                always-float-label="{{alwaysFloatLabel}}"
-                label="[[label]]"
-                min="[[min]]"
-                max="[[max]]"
-                value="{{value}}"
-                disabled="[[disabled]]"
-                step="{{step}}"
-                fallback-value="[[fallbackValue]]"
-              >
-                <!--
-                  <div slot="prefix"></div>
-                  <div slot="suffix"></div>
-                -->
-              </paper-number-input>
+                <paper-number-input always-float-label="{{alwaysFloatLabel}}" label="[[label]]" min="[[min]]" max="[[max]]" value="{{value}}" disabled="[[disabled]]" step="{{step}}" fallback-value="[[fallbackValue]]">
+                </paper-number-input>
 
-              <script>
-                var scope = document.getElementById('scope');
+              </template>
+            </dom-bind>
 
-                scope.label = 'Number';
-                scope.min = 1;
-                scope.max = 10;
-                scope.value = 5;
-                scope.fallbackValue = 0;
-                scope.alwaysFloatLabel = true;
-              </script>
+          </template>
+        </demo-snippet>
 
-            </template>
-          </dom-bind>
+      </div>`;
 
-        </template>
-      </demo-snippet>
+        document.body.appendChild($_documentContainer.content);
+    </script>
 
-    </div>
+    <script>
+      customElements.whenDefined('paper-number-input').then(() => {
+        requestAnimationFrame(() => {
+          const scope = document.getElementById('scope');
 
+          scope.label = 'Number';
+          scope.min = 1;
+          scope.max = 10;
+          scope.value = 5;
+          scope.fallbackValue = 0;
+          scope.alwaysFloatLabel = true;
+        });
+      });
+    </script>
   </body>
 </html>
